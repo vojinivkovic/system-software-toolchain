@@ -4,8 +4,6 @@ A C++ implementation of a small system-software toolchain consisting of an assem
 
 The project implements the main mechanisms involved in translating assembly programs into relocatable object files, linking multiple object files into executable images, and executing the resulting machine code on an emulated processor.
 
-The implementation focuses on low-level concepts including instruction encoding, sections, symbol tables, relocation, expression evaluation, object-file structures, address assignment, CPU state, memory, and interrupts.
-
 ## Components
 
 ### Assembler
@@ -66,26 +64,23 @@ It provides:
 * Memory-mapped timer configuration
 
 
-## Low-Level Design
+## Object-File Format
 
-### Object Files
+The project defines an ELF-like object-file representation containing:
 
-The project defines and processes an ELF-like object-file representation containing:
-
-* File header information
+* File headers
 * Section information
 * Section-name string tables
-* Symbol tables
-* Symbol-name string tables
+* Symbol and string tables
 * Relocation information
 
-The assembler serializes these structures into object files, while the linker parses them when processing input files.
+The assembler serializes these structures, while the linker parses and processes them during linking.
 
 ## Technologies
 
 * C++
 * Assembly / machine-code concepts
-* ELF-style object and executable formats
+* ELF-like object files and executable formats
 * Symbol tables
 * Relocation
 * CPU and memory emulation
