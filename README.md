@@ -12,6 +12,7 @@ The assembler processes assembly source code and generates relocatable object fi
 
 Implemented functionality includes:
 
+* Lexical analysis and parsing using Flex and Yacc
 * One-pass assembly
 * Sections
 * Instruction encoding
@@ -79,6 +80,8 @@ The assembler serializes these structures, while the linker parses and processes
 ## Technologies
 
 * C++
+* Flex
+* Yacc
 * Assembly / machine-code concepts
 * ELF-like object files and executable formats
 * Symbol tables
